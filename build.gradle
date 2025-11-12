@@ -1,0 +1,55 @@
+plugins {
+    id 'java'
+    id 'war'
+}
+
+group 're'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    junitVersion = '5.10.2'
+}
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+dependencies {
+    compileOnly('javax.servlet:javax.servlet-api:4.0.1')
+    // thư viện jstl : 1.2
+    implementation("jstl:jstl:1.2")
+
+    //spring web mvc
+    implementation("org.springframework:spring-webmvc:5.3.18")
+
+    //MySQL Connector Java
+    implementation("mysql:mysql-connector-java:8.0.28")
+
+    // thư viện lombok( tạo contructor và get/setter)
+    implementation("org.projectlombok:lombok:1.18.30")
+    annotationProcessor "org.projectlombok:lombok:1.18.30"
+
+    // Thư viện Spring ORM
+    implementation("org.springframework:spring-orm:5.3.18")
+
+    // Hibernate ORM
+    implementation("org.hibernate:hibernate-core:5.6.15.Final")
+
+    // Quản lý entity
+    implementation("org.hibernate:hibernate-entitymanager:5.4.10.Final")
+
+
+    testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+}
+
+test {
+    useJUnitPlatform()
+}
