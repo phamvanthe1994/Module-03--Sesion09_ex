@@ -7,8 +7,6 @@ import java.util.List;
 public interface CategoriesRepository {
     List<Categories> findAll();
 
-    ư
-
     Categories findById(int catalogId);
 
     boolean save(Categories catalog);
