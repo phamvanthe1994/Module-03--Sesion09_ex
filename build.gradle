@@ -45,6 +45,18 @@ dependencies {
     // Quản lý entity
     implementation("org.hibernate:hibernate-entitymanager:5.4.10.Final")
 
+    //8. Validate
+    implementation("org.hibernate.validator:hibernate-validator:6.2.0.Final")
+    // https://mvnrepository.com/artifact/javax.validation/validation-api
+    implementation("javax.validation:validation-api:2.0.1.Final")
+
+    //9. Upload FIle
+    // https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload
+    implementation("commons-fileupload:commons-fileupload:1.5")
+
+    //10. https://mvnrepository.com/artifact/com.cloudinary/cloudinary-http44
+    implementation("com.cloudinary:cloudinary-http44:1.39.0")
+
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
